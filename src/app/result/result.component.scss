@@ -1,0 +1,45 @@
+.table{
+    border: inherit;
+    table-layout: ceil($number: 0);
+}
+.center1 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 326px;
+  }
+  .menu {
+    width: 25%;
+    float: left;
+  }
+  .main {
+    width: 75%;
+    float: left;
+    width:354%;
+  }
+  .center2 {
+    margin: auto;
+    width: 50%;
+    border: 3px solid green;
+    padding: 10px;
+    text-align: center;
+    margin-top: 190px;
+  }
+  .main1 {
+    width: 210%;
+    float: left;
+  }
+  .banner {
+    width: 101%;
+    height: 133px;
+    margin-bottom: -119px;
+}
+.title1 {
+    COLOR: #FF0000;
+    FONT: 18px Arial;
+    margin-top: 144px;
+    position: absolute;
+}
+.body1 {
+    background-color: #EAF3FA;
+}
+  

@@ -1,0 +1,57 @@
+
+    <style>
+      /* div {
+        background-color: #EAF3FA;
+      } */
+      
+        table, th, td {
+          border: 1px solid black;
+          
+        }
+        </style>
+        <!-- <div class="body1"></div> -->
+        <!-- <body style="background-color:#EAF3FA"></body> -->
+        <div class="title1">
+          University of NCJ
+IDE - M.A. / M.Com. / M.Sc./M.C.A./MSC(IT) DECEMBER 2019 EXAMINATIONS RESULTS (PUBLISHED ON 18-06-2020)
+Students are directed to apply through online only for June 2020 examination and Revaluation of December 2019 Examinations.
+ONLINE REGISTRATION FOR REVALUATION WILL BE OPENED ON : 21-07-2020
+        </div>
+        
+        <table class="center1 center2">
+          
+          <tr>
+            <th>Endrolemt number</th>
+            <th class="main">123435455</th>
+            
+          </tr>
+          <tr>
+            <th>Name:</th>
+            <th class="main">Nimisha</th>
+            
+          </tr>
+          <tr>
+            <th>Branch:</th>
+            <th class="main">BA</th>
+            
+          </tr>
+            <tr>
+              <th>Subject Code</th>
+              <th>Internal</th>
+              <th>Mark Secured</th>
+              <th>Maximum mark</th>
+              <th>Result</th>
+            </tr>
+            <tr *ngFor="let item of results" >
+            <td> {{item.subjectCode}}</td>
+              <td> {{item.internal}}</td>
+              <td>{{item.markSecured}}</td>
+              <td>{{item.maximumMark}}</td>
+              <td>{{item.result}}</td>
+            </tr>
+            <tr class="main1">
+              <td># : Result will be published only on receipt of Internal Assesment
+                AAA: Absent    P : PASS    F : FAIL</td>
+            </tr>
+          </table>
+          
