@@ -19,11 +19,13 @@ export class WelcomeComponent implements OnInit {
   }
 
   async sumbit() {
-    // if(!this.number){
-    //   return;
-    // }
+    
      await this.dbService.getDetails().then(todos => this.todos = todos);
      console.log(this.todos);
+     this.todos = this.todos[0];
+     if(this.number != this.todos.RegisterNumber){
+      return;
+    }
      this.router.navigate(['landing']);
   }
 
