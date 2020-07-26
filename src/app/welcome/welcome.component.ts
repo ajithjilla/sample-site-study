@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DBService } from '../db.service'
 
 @Component({
   selector: 'app-welcome',
@@ -9,16 +10,21 @@ import { Router } from '@angular/router';
 export class WelcomeComponent implements OnInit {
 
   number:number;
-  constructor(private router: Router) { }
+  student: any;
+  todos: any;
+  constructor(private router: Router, private dbService: DBService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.dbService.initDB();
   }
 
   sumbit() {
-    if(!this.number){
-      return;
-    }
-    this.router.navigate(['landing']);
+    // if(!this.number){
+    //   return;
+    // }
+     this.dbService.getDetails().then(todos => this.todos = todos);
+     console.log(this.todos);
+     this.router.navigate(['landing']);
   }
 
 }
