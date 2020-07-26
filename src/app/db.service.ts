@@ -16,7 +16,7 @@ export class DBService {
         this.client = Stitch.initializeDefaultAppClient('ng-database-demo-nbeep');
         this.db = this.client.getServiceClient(RemoteMongoClient.factory, 'mongodb-atlas').db('ng-db');
     }
-      getDetails() {
+      async getDetails() {
         // // this.client.auth.loginWithCredential(new AnonymousCredential()).then(() => {
         // //     return this.db.collection<{title: string}>('student').find().asArray();
         // });
@@ -25,13 +25,11 @@ export class DBService {
         //      .collection<{ Name: string; }>('todos')
         //      .find()
         //      .asArray();
-        return this.client.auth
-        .loginWithCredential(new AnonymousCredential())
-        .then(() => {
-            return this.db
-            .collection<{Name: string}>('todos')
-            .find()
-            .asArray();
-        })
+        await this.client.auth
+              .loginWithCredential(new AnonymousCredential());
+          return this.db
+              .collection<{ Name: string; }>('todos')
+              .find()
+              .asArray();
     }
 }

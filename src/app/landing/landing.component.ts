@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DBService } from '../db.service';
 
 @Component({
   selector: 'app-landing',
@@ -16,21 +17,18 @@ export class LandingComponent implements OnInit {
   year: number;
   attandance:number;
   major:string;
-  constructor(private route: Router) { }
+  todos: any;
+  constructor(private route: Router, private dbService: DBService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.studentDetail();
   }
 
-  studentDetail() {
-    this.name = "Nimisha",
-    this.regNum = 12345,
-    this.prevGpa = "5",
-    this.department = "BA",
-    this.email= "nimishajio@gmail.com",
-    this.year = 1,
-    this.attandance = 90,
-    this.major = " BA History"
+  async studentDetail() {
+    await this.dbService.getDetails().then(todos => this.todos = todos);
+     console.log(this.todos);
+     this.todos = this.todos[0];
+     console.log(this.todos.Name);
   }
 
   result() {

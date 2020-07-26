@@ -18,11 +18,11 @@ export class WelcomeComponent implements OnInit {
     this.dbService.initDB();
   }
 
-  sumbit() {
+  async sumbit() {
     // if(!this.number){
     //   return;
     // }
-     this.dbService.getDetails().then(todos => this.todos = todos);
+     await this.dbService.getDetails().then(todos => this.todos = todos);
      console.log(this.todos);
      this.router.navigate(['landing']);
   }
